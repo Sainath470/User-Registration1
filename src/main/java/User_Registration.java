@@ -4,6 +4,7 @@ public class User_Registration{
     String firstName;
     String lastName;
     String email;
+    String phoneNumber;
     Scanner input=new Scanner(System.in);
 
     //Method for taking first name as input
@@ -30,21 +31,31 @@ public class User_Registration{
     }
 
     //Method for input checking
-    public void userValidator()
-    {
-        this.firstName=getFirstName();
-        boolean fName=Pattern.matches("^[A-Z][a-z]{2,}", firstName);
+    public void userValidator() {
+        this.firstName = getFirstName();
+        boolean fName = Pattern.matches("^[A-Z][a-z]{2,}", firstName);
         System.out.print("Your Entered first name is ");
         printingResult(fName);
-        this.lastName=getLastName();
-        boolean lName=Pattern.matches("^[A-Z][a-z]{2,}", lastName);
+        this.lastName = getLastName();
+        boolean lName = Pattern.matches("^[A-Z][a-z]{2,}", lastName);
         System.out.print("Your Entered last name is ");
         printingResult(lName);
-        this.email=getUserEmail();
-        boolean emailId=Pattern.matches("^[a-zA-Z.]+([a-z]+)?[@][a-z]+\\.[a-z]{2,3}(\\.[A-Za-z]{2,6})?", email);
+        this.email = getUserEmail();
+        boolean emailId = Pattern.matches("^[a-zA-Z.]+([a-z]+)?[@][a-z]+\\.[a-z]{2,3}(\\.[A-Za-z]{2,6})?", email);
         System.out.print("Your entered Email is ");
         printingResult(emailId);
+        this.phoneNumber=getUserPhoneNumber();
+        boolean pNumber=Pattern.matches("\\d{1,2}[\\s+]?\\d{1,10}", phoneNumber);
+        System.out.print("Your entered Phone number is ");
+        printingResult(pNumber);
     }
+
+        public String getUserPhoneNumber()
+        {
+            System.out.println("Enter your valid Phone Number ");
+            System.out.println("phone number must be in this format ex: 91 1234567890");
+            return input.next();
+        }
 
     public static void printingResult(boolean check)
     {
