@@ -5,11 +5,11 @@ public class User_Registration{
     String lastName;
     String email;
     String phoneNumber;
-    Scanner input=new Scanner(System.in);
 
     //Method for taking first name as input
     public String getFirstName()
     {
+        Scanner input=new Scanner(System.in);
         System.out.println("Please Enter your first Name");
         System.out.println("Rules: ");
         System.out.println("First letter should be Capital letter and minimum 3 characters");
@@ -17,17 +17,27 @@ public class User_Registration{
     }
 
     public String getLastName() {
+        Scanner input2=new Scanner(System.in);
         System.out.println("Please Enter your Last Name");
         System.out.println("Rules: ");
         System.out.println("first letter should be Capital letter");
         System.out.println("Contain minimum 3 characters");
-        return input.next();
+        return input2.next();
+    }
+
+    public String getUserPhoneNumber()
+    {
+        Scanner input4=new Scanner(System.in);
+        System.out.println("Enter your valid Phone Number ");
+        System.out.println("phone number must be in this format ex: 91 1234567890");
+        return input4.next();
     }
 
     public String getUserEmail()
     {
+        Scanner input3=new Scanner(System.in);
         System.out.println("Please Enter your valid email");
-        return input.next();
+        return input3.next();
     }
 
     //Method for input checking
@@ -50,12 +60,6 @@ public class User_Registration{
         printingResult(pNumber);
     }
 
-        public String getUserPhoneNumber()
-        {
-            System.out.println("Enter your valid Phone Number ");
-            System.out.println("phone number must be in this format ex: 91 1234567890");
-            return input.next();
-        }
 
     public static void printingResult(boolean check)
     {
