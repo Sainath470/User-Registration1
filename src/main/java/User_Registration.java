@@ -5,6 +5,7 @@ public class User_Registration{
     String lastName;
     String email;
     String phoneNumber;
+    String passWord;
 
     //Method for taking first name as input
     public String getFirstName()
@@ -40,6 +41,15 @@ public class User_Registration{
         return input3.next();
     }
 
+    public String getPassword()
+    {
+        Scanner input4=new Scanner(System.in);
+        System.out.println("Enter the Password");
+        System.out.println("Rule: ");
+        System.out.println("Minimum 8 characters");
+        return input4.next();
+    }
+
     //Method for input checking
     public void userValidator() {
         this.firstName = getFirstName();
@@ -58,6 +68,10 @@ public class User_Registration{
         boolean pNumber=Pattern.matches("\\d{1,2}[\\s+]?\\d{1,10}", phoneNumber);
         System.out.print("Your entered Phone number is ");
         printingResult(pNumber);
+        this.passWord=getPassword();
+        boolean pass=Pattern.matches("[a-zA-Z]{8,}", passWord);
+        System.out.print("Your entered Password is ");
+        printingResult(pass);
     }
 
 
