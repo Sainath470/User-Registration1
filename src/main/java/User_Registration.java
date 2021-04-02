@@ -61,7 +61,7 @@ public class User_Registration{
         System.out.print("Your Entered last name is ");
         printingResult(lName);
         this.email = getUserEmail();
-        boolean emailId = Pattern.matches("^[\\D\\d.\\-\\+]+[@][a-z\\d]+\\.[a-z]{2,3}(\\.[a-z]{2,3})?", email);
+        boolean emailId = Pattern.matches("^[\\D\\d.\\-+]+[@][a-z\\d]+\\.[a-z]{2,3}(\\.[a-z]{2,3})?", email);
         System.out.print("Your entered Email is ");
         printingResult(emailId);
         this.phoneNumber=getUserPhoneNumber();
@@ -71,6 +71,11 @@ public class User_Registration{
         this.passWord=getPassword();boolean pass=Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()]).{8,}$",passWord);
         System.out.print("Your entered Password is ");
         printingResult(pass);
+    }
+
+    public boolean emailValidation1(String email)
+    {
+        return Pattern.matches("^[a-zA-Z]+([.\\-+]?\\d+)?[@][a-z\\d]+\\.[a-z]{2,3}([,])?(\\.[a-z]{2,3})?", email);
     }
 
     public static void printingResult(boolean check)
@@ -91,4 +96,3 @@ public class User_Registration{
         userinfo.userValidator();
     }
 }
-
