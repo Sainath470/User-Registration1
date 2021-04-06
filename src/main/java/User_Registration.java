@@ -16,7 +16,6 @@ public class User_Registration {
             System.out.println("INVALID");
         }
     }
-
     public Boolean firstnameValidation(String firstname) throws UserValidateException {
         try {
             //Letting below statement trigger an empty value exception

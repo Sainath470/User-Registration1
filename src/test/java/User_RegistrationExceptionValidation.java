@@ -11,7 +11,6 @@ class User_RegistrationExceptionValidation {
             obj.printStackTrace();
         }
     }
-
     @Test
     public void givenEmptyFirstName_WhenNull_throwsException()
     {
