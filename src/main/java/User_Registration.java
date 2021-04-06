@@ -9,8 +9,6 @@ public class User_Registration {
     String email;
     String phoneNumber;
     String passWord;
-
-
     public static void printingResult(boolean check) {
         if (Boolean.TRUE.equals(check)) {
             System.out.println("VALID");

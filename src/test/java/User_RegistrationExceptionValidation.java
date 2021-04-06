@@ -2,7 +2,6 @@ import org.junit.jupiter.api.Test;
 import userRegistration1.UserValidateException;
 
 class User_RegistrationExceptionValidation {
-
     @Test
     public void givenEmptyFirstName_WhenEmpty_throwsException() {
         User_Registration ex_obj = new User_Registration();
